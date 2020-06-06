@@ -41,4 +41,38 @@ class OffsetTest < Minitest::Test
     assert_equal 0, offset.final_d_key
 
   end
+
+  def test_it_can_turn_last_four_into_elements_in_array
+    key = Key.new
+    key.generate_five_digit_key
+    key_feature = KeyFeature.new(key)
+    today = TodayDate.new
+    today.right_now
+    today.timestamp
+    offset_calculations = OffsetCalculations.new(today)
+    offset_calculations.get_last_four
+    offset = Offset.new(key_feature, offset_calculations)
+    
+    assert_equal [4, 4, 0, 0], offset.last_four_to_array
+
+  end
+
+  def test_it_can_calculate_final_key_shifts
+    skip
+    key = Key.new
+    key.generate_five_digit_key
+    key_feature = KeyFeature.new(key)
+    today = TodayDate.new
+    today.right_now
+    today.timestamp
+    offset_calculations = OffsetCalculations.new(today)
+    offset_calculations.get_last_four
+    offset = Offset.new(key_feature, offset_calculations)
+    offset.calculate_final_shift
+    assert_equal "16", offset.final_a_key
+    assert_equal "27", offset.final_b_key
+    assert_equal "34", offset.final_c_key
+    assert_equal "45", offset.final_d_key
+
+  end
 end

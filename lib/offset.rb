@@ -15,6 +15,14 @@ attr_reader :key_feature,
     @final_d_key = 0
   end
 
+  def last_four_to_array
+    last_four = calculations.last_four
+    last_four_array = last_four.to_s.split(//).map{|num| num.to_i}
+  end
+
+  def calculate_final_shift
+  end
+
 
 
 
