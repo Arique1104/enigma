@@ -1,17 +1,15 @@
 class Offset
-attr_reader :key_feature,
-            :date,
-            :last_four
-  def initialize(key_feature, today)
+attr_reader :key_feature
+
+  def initialize(key_feature, offset_calculations)
     @key_feature = key_feature
-    @date = today
-    @last_four = []
+    @calculations = offset_calculations
+
   end
 
-  def squared_date
-    date_integer = @date.date_initiated[0]
-    date_integer * date_integer
-  end
+
+
+
 
 
 
