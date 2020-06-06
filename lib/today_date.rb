@@ -1,7 +1,7 @@
 class TodayDate
- #attr_reader
-  #def initialize(*arg)
-
-  #end
+ attr_reader :date_initiated
+  def initialize
+    @date_initiated = []
+  end
 
 end

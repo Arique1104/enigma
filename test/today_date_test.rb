@@ -12,7 +12,9 @@ class TodayDateTest < Minitest::Test
     assert_instance_of TodayDate, today
   end
 
-  #def test_it_has_attributes
-  #end
+  def test_it_has_attributes
+    today = TodayDate.new
+    assert_equal [], today.date_initiated
+  end
 
 end
