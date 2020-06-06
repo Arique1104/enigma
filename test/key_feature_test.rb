@@ -27,7 +27,7 @@ class KeyFeatureTest < Minitest::Test
   def test_it_can_generate_five_random_numbers
     key_feature = KeyFeature.new
 
-    key_feature.generate_random_numbers
+    key_feature.generate_random_key_numbers
 
     assert_equal 5, key_feature.five_digit_key.count
 
@@ -35,7 +35,7 @@ class KeyFeatureTest < Minitest::Test
 
   def test_it_can_add_random_numbers_to_approprate_keys
     key_feature = KeyFeature.new
-    key_feature.generate_random_numbers
+    key_feature.generate_random_key_numbers
     key_feature.assign_keys_numbers
     assert_equal 1, key_feature.a_key.count
     assert_equal 1, key_feature.b_key.count
