@@ -24,5 +24,8 @@ class OffsetTest < Minitest::Test
     offset = Offset.new(key_feature)
 
     assert_equal [], offset.today_date
+    assert_equal key_feature, offset.key_feature
   end
+
+
 end
