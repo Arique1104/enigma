@@ -9,9 +9,13 @@ require "./lib/offset"
 
 class OffsetCalculationsTest < Minitest::Test
 
-  #def test_it_exists
-    #assert_instance_of <Class>,
-  #end
+  def test_it_exists
+    today = TodayDate.new
+    today.right_now
+    today.timestamp
+    offset_calculations = OffsetCalculations.new(today)
+    assert_instance_of OffsetCalculations, offset_calculations
+  end
 
   #def test_it_has_attributes
   #end
