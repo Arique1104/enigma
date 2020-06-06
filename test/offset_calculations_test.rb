@@ -22,8 +22,10 @@ class OffsetCalculationsTest < Minitest::Test
     today.right_now
     today.timestamp
     offset_calculations = OffsetCalculations.new(today)
-    
+
     assert_equal today, offset_calculations.date
+
+    assert_equal 0, offset_calculations.last_four
   end
 
 end
