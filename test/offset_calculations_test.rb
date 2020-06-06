@@ -17,7 +17,13 @@ class OffsetCalculationsTest < Minitest::Test
     assert_instance_of OffsetCalculations, offset_calculations
   end
 
-  #def test_it_has_attributes
-  #end
+  def test_it_has_attributes
+    today = TodayDate.new
+    today.right_now
+    today.timestamp
+    offset_calculations = OffsetCalculations.new(today)
+    
+    assert_equal today, offset_calculations.date
+  end
 
 end
