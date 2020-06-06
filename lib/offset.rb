@@ -8,4 +8,9 @@ class Offset
     @today_date = []
   end
 
+  def date
+    Time.now
+    require "pry"; binding.pry
+  end
+
 end

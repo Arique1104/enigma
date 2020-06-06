@@ -27,5 +27,16 @@ class OffsetTest < Minitest::Test
     assert_equal key_feature, offset.key_feature
   end
 
+  def test_it_can_gather_today_date
+    key = Key.new
+    key.generate_five_digit_key
+    key_feature = KeyFeature.new(key)
+    offset = Offset.new(key_feature)
+
+    assert_equal ["060620"], offset.date
+
+  end
+
+
 
 end
