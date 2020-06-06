@@ -38,4 +38,16 @@ class OffsetCalculationsTest < Minitest::Test
 
   end
 
+  def test_it_can_take_the_last_four_digits_of_squared_integer
+
+    today = TodayDate.new
+    today.right_now
+    today.timestamp
+    offset_calculations = OffsetCalculations.new(today)
+    offset_calculations.get_last_four
+
+    assert_equal 4400, offset_calculations.last_four
+
+  end
+
 end
