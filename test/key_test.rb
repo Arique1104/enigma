@@ -15,4 +15,12 @@ class KeyTest < Minitest::Test
     assert_equal [], key.five_digit_key
   end
 
+  def test_it_can_generate_five_random_numbers
+    key = Key.new
+    key.generate_five_digit_key
+
+    assert_equal 5, key.five_digit_key.count
+  end
+
+
 end
