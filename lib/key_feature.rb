@@ -20,4 +20,14 @@ class KeyFeature
     end
   end
 
+  def assign_keys_numbers
+    @a_key << "#{@five_digit_key[0]}#{@five_digit_key[1]}"
+    @b_key << "#{@five_digit_key[1]}#{@five_digit_key[2]}"
+    @c_key << "#{@five_digit_key[2]}#{@five_digit_key[3]}"
+    @d_key << "#{@five_digit_key[3]}#{@five_digit_key[4]}"
+
+  end
+
+
+
 end
