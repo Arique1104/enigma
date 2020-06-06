@@ -8,5 +8,6 @@ require "./lib/offset"
 class OffsetTest < Minitest::Test
 
   def test_it_exists
+
   end
 end
