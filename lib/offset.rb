@@ -1,16 +1,17 @@
-require "date"
 class Offset
- attr_reader  :today_date,
-              :key_feature
+attr_reader :key_feature
 
-  def initialize(key_feature)
+  def initialize(key_feature, offset_calculations)
     @key_feature = key_feature
-    @today_date = []
+    @calculations = offset_calculations
+
   end
 
-  def date
-    Time.now
-    require "pry"; binding.pry
-  end
+
+
+
+
+
+
 
 end
