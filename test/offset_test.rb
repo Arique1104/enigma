@@ -6,8 +6,14 @@ require "./lib/key_feature"
 require "./lib/offset"
 
 class OffsetTest < Minitest::Test
-  key = Key.new
-  key.generate_five_digit_key
-  key_feature = KeyFeature.new(key)
-  offset = Offset.new(key_feature)
+
+  def test_it_exists
+    key = Key.new
+    key.generate_five_digit_key
+    key_feature = KeyFeature.new(key)
+    offset = Offset.new(key_feature)
+
+    assert_instance_of Offset, offset
+
+  end
 end
