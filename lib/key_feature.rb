@@ -1,7 +1,9 @@
 class KeyFeature
- attr_reader :five_digit_key
+ attr_reader :five_digit_key,
+              :a_key
   def initialize
     @five_digit_key = []
+    @a_key = []
 
   end
 

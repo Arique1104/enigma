@@ -14,6 +14,9 @@ class KeyFeatureTest < Minitest::Test
     key_feature = KeyFeature.new
 
     assert_equal [], key_feature.five_digit_key
+
+    assert_equal [],
+    key_feature.a_key
   end
 
   def test_it_can_generate_five_random_numbers
