@@ -52,13 +52,13 @@ class OffsetTest < Minitest::Test
     offset_calculations = OffsetCalculations.new(today)
     offset_calculations.get_last_four
     offset = Offset.new(key_feature, offset_calculations)
-    
-    assert_equal [4, 4, 0, 0], offset.last_four_to_array
+
+    assert_equal [4, 4, 0, 0], offset.last_four_array
 
   end
 
   def test_it_can_calculate_final_key_shifts
-    skip
+    # skip
     key = Key.new
     key.generate_five_digit_key
     key_feature = KeyFeature.new(key)
@@ -68,11 +68,11 @@ class OffsetTest < Minitest::Test
     offset_calculations = OffsetCalculations.new(today)
     offset_calculations.get_last_four
     offset = Offset.new(key_feature, offset_calculations)
-    offset.calculate_final_shift
-    assert_equal "16", offset.final_a_key
-    assert_equal "27", offset.final_b_key
-    assert_equal "34", offset.final_c_key
-    assert_equal "45", offset.final_d_key
+    offset.calculate_final_key_shift
+    assert_equal 16, offset.final_a_key
+    assert_equal 27, offset.final_b_key
+    assert_equal 34, offset.final_c_key
+    assert_equal 45, offset.final_d_key
 
   end
 end
