@@ -27,16 +27,4 @@ class KeyFeatureTest < Minitest::Test
 
   end
 
-  def test_it_can_add_random_numbers_to_approprate_keys
-    skip
-    key_feature = KeyFeature.new
-    key_feature.generate_random_key_numbers
-    key_feature.assign_keys_numbers
-    assert_equal 1, key_feature.a_key.count
-    assert_equal 1, key_feature.b_key.count
-    assert_equal 1, key_feature.c_key.count
-    assert_equal 1, key_feature.d_key.count
-
-  end
-
 end
