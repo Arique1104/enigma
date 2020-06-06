@@ -1,3 +1,4 @@
+require "date"
 class Offset
  attr_reader  :today_date,
               :key_feature
