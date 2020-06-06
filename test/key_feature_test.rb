@@ -10,7 +10,10 @@ class KeyFeatureTest < Minitest::Test
     assert_instance_of KeyFeature, key_feature
   end
 
-  #def test_it_has_attributes
-  #end
+  def test_it_has_attributes
+    key_feature = KeyFeature.new
+    
+    assert_equal [], key_feature.five_digit_key
+  end
 
 end
