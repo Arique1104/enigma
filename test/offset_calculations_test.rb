@@ -28,4 +28,14 @@ class OffsetCalculationsTest < Minitest::Test
     assert_equal 0, offset_calculations.last_four
   end
 
+  def test_it_can_get_the_squared_number_of_date
+    today = TodayDate.new
+    today.right_now
+    today.timestamp
+    offset_calculations = OffsetCalculations.new(today)
+
+    assert_equal 3674784400, offset_calculations.squared_date
+
+  end
+
 end

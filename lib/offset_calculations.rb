@@ -7,4 +7,9 @@ class OffsetCalculations
 
   end
 
+  def squared_date
+    date_integer = @date.date_initiated[0]
+    date_integer * date_integer
+  end
+
 end
