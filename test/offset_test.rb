@@ -5,7 +5,6 @@ require "./lib/key"
 require "./lib/key_feature"
 require "./lib/offset_calculations"
 require "./lib/today_date"
-
 require "./lib/offset"
 
 class OffsetTest < Minitest::Test
