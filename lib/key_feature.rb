@@ -13,12 +13,12 @@ class KeyFeature
 
   end
 
-  def generate_random_key_numbers
-    5.times do
-      key = rand(0..9)
-      @five_digit_key << key
-    end
-  end
+  # def generate_random_key_numbers
+  #   5.times do
+  #     key = rand(0..9)
+  #     @five_digit_key << key
+  #   end
+  # end
 
   def assign_keys_numbers
     @a_key << "#{@five_digit_key[0]}#{@five_digit_key[1]}"

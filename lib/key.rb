@@ -1,7 +1,9 @@
 class Key
- #attr_reader
-  #def initialize(*arg)
+ attr_reader :five_digit_key
+  def initialize
+    @five_digit_key = []
+  end
 
-  #end
+
 
 end
