@@ -46,4 +46,6 @@ class OffsetTest < Minitest::Test
     assert_equal 3674784400, offset.squared_date
 
   end
+
+
 end

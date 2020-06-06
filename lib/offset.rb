@@ -9,8 +9,8 @@ attr_reader :key_feature,
   end
 
   def squared_date
-    date_array = @date.date_initiated
-# require "pry"; binding.pry
+    date_integer = @date.date_initiated[0]
+    date_integer * date_integer
   end
 
 
