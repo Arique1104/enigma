@@ -29,6 +29,21 @@ class OffsetTest < Minitest::Test
     offset = Offset.new(key_feature, today)
 
     assert_equal key_feature, offset.key_feature
-    assert_equal today, offset.today
+    assert_equal today, offset.date
+
+    assert_equal [], offset.last_four
+  end
+
+  def test_it_can_get_the_squared_number_of_date
+    key = Key.new
+    key.generate_five_digit_key
+    key_feature = KeyFeature.new(key)
+    today = TodayDate.new
+    today.right_now
+    today.timestamp
+    offset = Offset.new(key_feature, today)
+
+    assert_equal 3674784400, offset.squared_date
+
   end
 end
