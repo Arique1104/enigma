@@ -11,7 +11,9 @@ class OffsetTest < Minitest::Test
     assert_instance_of Offset, offset
   end
 
-  #def test_it_has_attributes
-  #end
+  def test_it_has_attributes
+    offset = Offset.new
+    assert_equal [], offset.date_today
+  end
 
 end
