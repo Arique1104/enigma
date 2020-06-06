@@ -14,7 +14,7 @@ attr_reader :key_feature,
   end
 
   def get_last_four
-    @last_four += squared_date % 10000 
+    @last_four += squared_date % 10000
   end
 
 
