@@ -5,4 +5,11 @@ class KeyFeature
 
   end
 
+  def generate_random_numbers
+    5.times do
+      key = rand(0..9)
+      @five_digit_key << key
+    end
+  end
+
 end
