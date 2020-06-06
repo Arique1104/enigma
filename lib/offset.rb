@@ -5,7 +5,7 @@ attr_reader :key_feature,
   def initialize(key_feature, today)
     @key_feature = key_feature
     @date = today
-    @last_four = []
+    @last_four = 0
   end
 
   def squared_date
