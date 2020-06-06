@@ -8,7 +8,12 @@ class TodayDate
 
   def right_now
     now = Time.now
-    now_formatted = now.strftime("%e%m%y")
+    now_formatted = now.strftime("%e%m%y").to_i
+  end
+
+  def timestamp
+    @date_initiated << right_now
+
   end
 
 
