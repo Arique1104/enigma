@@ -7,9 +7,10 @@ require "./lib/today_date"
 
 class TodayDateTest < Minitest::Test
 
-  #def test_it_exists
-    #assert_instance_of <Class>,
-  #end
+  def test_it_exists
+    today = TodayDate.new
+    assert_instance_of TodayDate, today
+  end
 
   #def test_it_has_attributes
   #end
