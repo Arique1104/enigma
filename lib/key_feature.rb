@@ -2,12 +2,14 @@ class KeyFeature
  attr_reader :five_digit_key,
               :a_key,
               :b_key,
-              :c_key
+              :c_key,
+              :d_key
   def initialize
     @five_digit_key = []
     @a_key = []
     @b_key = []
     @c_key = []
+    @d_key = []
 
   end
 

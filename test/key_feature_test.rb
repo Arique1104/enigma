@@ -20,6 +20,8 @@ class KeyFeatureTest < Minitest::Test
     assert_equal [], key_feature.b_key
 
     assert_equal [], key_feature.c_key
+
+    assert_equal [], key_feature.d_key
   end
 
   def test_it_can_generate_five_random_numbers
