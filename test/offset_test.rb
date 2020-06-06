@@ -55,7 +55,7 @@ class OffsetTest < Minitest::Test
     today.right_now
     today.timestamp
     offset = Offset.new(key_feature, today)
-
+    offset.get_last_four
     assert_equal 4400, offset.last_four
 
   end
