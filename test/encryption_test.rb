@@ -32,6 +32,15 @@ class EncryptionTest < Minitest::Test
     assert_equal "12345", @encryption.string_offset_key
     assert_equal @offset, @encryption.offset
     assert_equal @today.date_initiated, @encryption.date
+
+    expected = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
+    assert_equal expected, @encryption.alphabet
+  end
+
+  def test_it_can_encrypt_a_message
+    skip
+    assert_equal "asfds asdf!", @encryption.encrypt_message("Hello World!")
+
   end
 
 
