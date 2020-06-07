@@ -36,14 +36,14 @@ class OffsetTest < Minitest::Test
 
   def test_it_can_turn_last_four_into_elements_in_array
 
-    assert_equal [4, 4, 0, 0], @offset.last_four_array
+    assert_equal [8, 4, 0, 0], @offset.last_four_array
 
   end
 
   def test_it_can_calculate_final_key_shifts
     # skip
     @offset.calculate_final_key_shift
-    assert_equal 16, @offset.final_a_key
+    assert_equal 20, @offset.final_a_key
     assert_equal 27, @offset.final_b_key
     assert_equal 34, @offset.final_c_key
     assert_equal 45, @offset.final_d_key

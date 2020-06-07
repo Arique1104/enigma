@@ -7,7 +7,7 @@ require "./lib/offset"
 require "./lib/encryption"
 require "./lib/enigma"
 
-class ClassName<Test < Minitest::Test
+class EngimaTest < Minitest::Test
 
   #def test_it_exists
     #assert_instance_of <Class>,

@@ -8,7 +8,8 @@ class TodayDate
 
   def right_now
     now = Time.now
-    now_formatted = now.strftime("%e%m%y").to_i
+    now_formatted = now.strftime("%m%d%y").to_i
+    # require "pry"; binding.pry
   end
 
   def timestamp
