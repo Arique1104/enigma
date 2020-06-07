@@ -10,7 +10,6 @@ class KeyFeature
     @b_key = "#{key.five_digit_key[1]}#{key.five_digit_key[2]}"
     @c_key = "#{key.five_digit_key[2]}#{key.five_digit_key[3]}"
     @d_key = "#{key.five_digit_key[3]}#{key.five_digit_key[4]}"
-
   end
 
 end
