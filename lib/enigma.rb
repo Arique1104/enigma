@@ -1,7 +1,7 @@
 class Enigma
- #attr_reader
-  #def initialize(*arg)
-
-  #end
+ attr_reader :encrypted
+  def initialize
+    @encrypted = {}
+  end
 
 end
