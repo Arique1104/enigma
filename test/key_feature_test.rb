@@ -20,6 +20,7 @@ class KeyFeatureTest < Minitest::Test
     key.generate_five_digit_key
     key_feature = KeyFeature.new(key)
 
+    assert_equal [1, 2, 3, 4, 5], key_feature.key
     assert_equal "12", key_feature.a_key
     assert_equal "23", key_feature.b_key
     assert_equal "34", key_feature.c_key
