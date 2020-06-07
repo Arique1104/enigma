@@ -40,7 +40,8 @@ class EncryptionTest < Minitest::Test
     encryption = Encryption.new(today, offset)
 
     assert_equal "60620", encryption.string_date
-    assert_equal offset, encryption.string_offset_key
+    assert_equal "12345", encryption.string_offset_key
+    assert_equal offset, encryption.offset
   end
 
 end
