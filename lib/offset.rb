@@ -26,6 +26,7 @@ attr_reader :key_feature,
     b_key = @key_feature.b_key.to_i
     c_key = @key_feature.c_key.to_i
     d_key = @key_feature.d_key.to_i
+
     @final_a_key += a_key + last_four_array[0]
     @final_b_key += b_key + last_four_array[1]
     @final_c_key += c_key + last_four_array[2]

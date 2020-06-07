@@ -10,11 +10,37 @@ require "./lib/encryption"
 
 class EncryptionTest < Minitest::Test
 
-  #def test_it_exists
-    #assert_instance_of <Class>,
-  #end
+  def test_it_exists
+    key = Key.new
+    key.generate_five_digit_key
+    key_feature = KeyFeature.new(key)
+    today = TodayDate.new
+    today.right_now
+    today.timestamp
+    offset_calculations = OffsetCalculations.new(today)
+    offset_calculations.get_last_four
+    offset = Offset.new(key_feature, offset_calculations)
+    offset.calculate_final_key_shift
+    encryption = Encryption.new(today, offset)
 
-  #def test_it_has_attributes
-  #end
+    assert_instance_of Encryption, encryption
+  end
+
+  def test_it_has_attributes
+    key = Key.new
+    key.generate_five_digit_key
+    key_feature = KeyFeature.new(key)
+    today = TodayDate.new
+    today.right_now
+    today.timestamp
+    offset_calculations = OffsetCalculations.new(today)
+    offset_calculations.get_last_four
+    offset = Offset.new(key_feature, offset_calculations)
+    offset.calculate_final_key_shift
+    encryption = Encryption.new(today, offset)
+
+    assert_equal "60620", encryption.string_date
+    assert_equal offset, encryption.string_offset_key
+  end
 
 end
