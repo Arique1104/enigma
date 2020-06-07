@@ -32,6 +32,9 @@ class EngimaTest < Minitest::Test
     expected1 = {}
     assert_equal expected1, @enigma.encrypted
 
+    expected2 = {}
+    assert_equal expected2, @enigma.decrypted
+
   end
 
 end
