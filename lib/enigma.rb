@@ -7,7 +7,7 @@ class Enigma
   end
 
   def encrypt(message, key = nil, date = nil)
-    @encrypted[:encryption] = Encryption.new(date, offset) 
+    @encrypted[:encryption] = Encryption.new(message, date, key) 
 
         if key == nil
             computer_key = Key.new
