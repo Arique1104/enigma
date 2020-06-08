@@ -27,7 +27,7 @@ class OffsetCalculationsTest < Minitest::Test
 
   def test_it_can_get_the_squared_number_of_date
 
-    assert_equal 3686918400, @offset_calculations.squared_date
+    assert_equal 3699072400, @offset_calculations.squared_date
 
   end
 
@@ -35,7 +35,7 @@ class OffsetCalculationsTest < Minitest::Test
 
     @offset_calculations.get_last_four
 
-    assert_equal 8400, @offset_calculations.last_four
+    assert_equal 2400, @offset_calculations.last_four
 
   end
 
