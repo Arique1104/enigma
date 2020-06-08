@@ -58,16 +58,10 @@ attr_reader :key_feature,
 
 
   end
- #
- #  def add_to_final_offset_array(final_key)
- #    @final_offset_array << final_key
- #
- #  end
- #
- #
- #
- #
 
+  def add_to_final_offset_array(final_key)
+    @final_offset_array << final_key
 
+  end
 
 end

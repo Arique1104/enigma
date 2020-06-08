@@ -42,15 +42,16 @@ class OffsetTest < Minitest::Test
     assert_equal 45, @offset.final_d_key
 
   end
-#
-#   def test_it_can_add_final_offset_key_to_final_offset_array
-#     assert_equal [], @offset.final_offset_array
-#
-#     @offset.add_to_final_offset_array(@final_a_key)
-#     @offset.add_to_final_offset_array(@final_b_key)
-#     @offset.add_to_final_offset_array(@final_c_key)
-#     @offset.add_to_final_offset_array(@final_d_key)
-#
-#     assert_equal [@final_a_key, @final_b_key, @final_c_key, @final_d_key], @offset.final_offset_array
-#   end
+
+  def test_it_can_add_final_offset_key_to_final_offset_array
+    assert_equal [], @offset.final_offset_array
+
+    @offset.add_to_final_offset_array(@final_a_key)
+    @offset.add_to_final_offset_array(@final_b_key)
+    @offset.add_to_final_offset_array(@final_c_key)
+    @offset.add_to_final_offset_array(@final_d_key)
+
+    assert_equal [@final_a_key, @final_b_key, @final_c_key, @final_d_key], @offset.final_offset_array
+  end
+  
 end
