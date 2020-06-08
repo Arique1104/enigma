@@ -12,8 +12,8 @@ class KeyTest < Minitest::Test
   end
 
   def test_it_has_attributes
-    assert_equal [1, 2, 3, 4, 5], @key.get_key
-    assert_equal 5, @key.get_key.count
+    assert_equal [1, 2, 3, 4, 5], @key
+    assert_equal 5, @key.count
   end
 
 

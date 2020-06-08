@@ -7,9 +7,7 @@ require "./lib/offset"
 
 class OffsetTest < Minitest::Test
   def setup
-    @key = Key.new
-    @key.generate_five_digit_key
-    @key_feature = KeyFeature.new(@key)
+    @key_feature = KeyFeature.new
     @today = TodayDate.new
     @today.right_now
     @today.timestamp
