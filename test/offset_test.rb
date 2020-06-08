@@ -32,16 +32,16 @@ class OffsetTest < Minitest::Test
     assert_equal [2, 4, 0, 0], @offset.last_four_array
 
   end
-#
-#   def test_it_can_calculate_final_key_shifts
-#     # skip
-#     @offset.calculate_final_key_shift
-#     assert_equal 14, @offset.final_a_key
-#     assert_equal 27, @offset.final_b_key
-#     assert_equal 34, @offset.final_c_key
-#     assert_equal 45, @offset.final_d_key
-#
-#   end
+
+  def test_it_can_calculate_final_key_shifts
+    # skip
+    @offset.calculate_final_key_shift
+    assert_equal 14, @offset.final_a_key
+    assert_equal 27, @offset.final_b_key
+    assert_equal 34, @offset.final_c_key
+    assert_equal 45, @offset.final_d_key
+
+  end
 #
 #   def test_it_can_add_final_offset_key_to_final_offset_array
 #     assert_equal [], @offset.final_offset_array
