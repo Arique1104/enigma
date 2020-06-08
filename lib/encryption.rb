@@ -1,38 +1,43 @@
 class Encryption
   attr_reader :date,
               :message,
-              :offset
+              :offset,
+              :key_string,
+              :alphabet
 
-    def initialize(message, today, offset)
+
+    def initialize(message, key_feature = nil, offset = nil)
       @message = message
-      @date = today
+      @key_feature = key_feature
       @offset = offset
+      @date = offset.date
+      @key_string = key_feature.get_key.join
+      @alphabet = ("a".."z").to_a << " "
     end
 
   def set_date
     if @date == nil
-          computer_date = TodayDate.new
-          new_date = computer_date.timestamp[0].to_s
-          @date = new_date
+        generate_date = @offset.get_date
+        @date = generate_date.date_initalized[0]
+        require "pry"; binding.pry
     else
-      @date = today.date
+      @date = offset.date
     end
   end
 
-def offset_key
-  if @key == nil
+def set_key
+  if @key_feature == nil
     computer_key = KeyFeature.new
     key_array = computer_key.generate_five_digit_key
     new_key = key_array.join
-    @key = new_key
+    @key_feature = new_key
   else
-    @key
+    @key_feature = key_feature.get_key.join
   end
 
 end
 
 def encrypt_message(message)
-  @alphabet = ("a".."z").to_a << " "
 # Turn message into array
     message_array = message.downcase.split(//)
 # Turn array elements into keys and values into index number to create an array of hashes
@@ -54,7 +59,7 @@ def encrypt_message(message)
             count += 1
             rotation_key_array << hash
           else
-            hash[letter] += @offset_key.final_a_key
+            hash[letter] += @offset.final_a_key
             count += 1
             rotation_key_array << hash
           end
@@ -64,7 +69,7 @@ def encrypt_message(message)
             count += 1
             rotation_key_array << hash
           else
-            hash[letter] += @offset_key.final_b_key
+            hash[letter] += @offset.final_b_key
             count += 1
             rotation_key_array << hash
           end
@@ -74,7 +79,7 @@ def encrypt_message(message)
             count += 1
             rotation_key_array << hash
           else
-            hash[letter] += @offset_key.final_c_key
+            hash[letter] += @offset.final_c_key
             count += 1
             rotation_key_array << hash
           end
@@ -84,7 +89,7 @@ def encrypt_message(message)
             count -= 3
             rotation_key_array << hash
           else
-            hash[letter] += @offset_key.final_d_key
+            hash[letter] += @offset.final_d_key
             count -= 3
             rotation_key_array << hash
           end
@@ -107,9 +112,6 @@ def encrypt_message(message)
     hash.values
   end
   print_encrypted_message = encrypted_message.join
-  @encrypted_message = print_encrypted_message
   end
-
-
 
 end
