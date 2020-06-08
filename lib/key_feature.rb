@@ -5,7 +5,7 @@ class KeyFeature
               :d_key,
               :key
   def initialize(key)
-    @key = key.generate_five_digit_key
+    @key = key.get_key
     @a_key = "#{@key[0]}#{@key[1]}"
     @b_key = "#{@key[1]}#{@key[2]}"
     @c_key = "#{@key[2]}#{@key[3]}"
