@@ -5,8 +5,12 @@ require "./lib/offset"
 class OffsetTest < Minitest::Test
   def setup
     @key_feature = KeyFeature.new
+    @key_feature.a_key.to_i
+    @key_feature.b_key.to_i
+    @key_feature.c_key.to_i
+    @key_feature.d_key.to_i
     @offset = Offset.new
-    @offset.date
+    @offset.get_date
     @offset.squared_date
     @offset.get_last_four
 
@@ -53,5 +57,5 @@ class OffsetTest < Minitest::Test
 
     assert_equal [@final_a_key, @final_b_key, @final_c_key, @final_d_key], @offset.final_offset_array
   end
-  
+
 end

@@ -10,10 +10,10 @@ class KeyFeature
     @get_key = []
     self.generate_five_digit_key
 
-    @a_key = nil
-    @b_key = nil
-    @c_key = nil
-    @d_key = nil
+    @a_key = a_key
+    @b_key = b_key
+    @c_key = c_key
+    @d_key = d_key
 
   end
 

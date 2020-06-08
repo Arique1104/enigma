@@ -12,19 +12,19 @@ attr_reader :key_feature,
 :date_initiated
 
  def initialize
-   @last_four = 0
    @date_initiated = []
    @final_offset_array = []
    @final_a_key = 0
    @final_b_key = 0
    @final_c_key = 0
    @final_d_key = 0
+   @last_four_array
  end
 
   def last_four_array
-    last_four_to_array = @last_four.to_s.split(//).map{|num| num.to_i}
+    four_array = get_last_four
+    four_array.to_s.split(//).map{|num| num.to_i}
   end
-
 
   def squared_date
     date_integer = @date_initiated[0]
@@ -32,10 +32,12 @@ attr_reader :key_feature,
   end
 
   def get_last_four
-    @last_four += squared_date % 10000
+    squared_date % 10000
   end
 
- def date
+
+
+ def get_date
    now = Time.now
    now_formatted = now.strftime("%m%d%y")
    @date = now_formatted
