@@ -20,7 +20,7 @@ class EngimaTest < Minitest::Test
     @offset_calculations.get_last_four
     @offset = Offset.new(@key_feature, @offset_calculations)
     @offset.calculate_final_key_shift
-    @encryption = Encryption.new(@today, @offset)
+    @encryption = Encryption.new(@message, @today, @offset)
     @enigma = Enigma.new
   end
 
