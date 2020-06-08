@@ -16,7 +16,7 @@ class EngimaTest < Minitest::Test
     @today.timestamp
     @offset_calculations = OffsetCalculations.new(@today)
     @offset_calculations.get_last_four
-    @offset = Offset.new(@key_feature, @offset_calculations)
+    @offset = Offset.new
     @offset.calculate_final_key_shift
     @enigma = Enigma.new
   end

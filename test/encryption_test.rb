@@ -11,16 +11,16 @@ class EncryptionTest < Minitest::Test
     @today = TodayDate.new
     @today.right_now
     @today.timestamp
-    @offset_calculations = OffsetCalculations.new(@today)
-    @offset_calculations.get_last_four
-    @offset = Offset.new(@key_feature, @offset_calculations)
+    # @offset_calculations = OffsetCalculations.new(@today)
+    # @offset_calculations.get_last_four
+    @offset = Offset.new
     @offset.calculate_final_key_shift
     @offset.add_to_final_offset_array(@final_a_key)
     @offset.add_to_final_offset_array(@final_b_key)
     @offset.add_to_final_offset_array(@final_c_key)
     @offset.add_to_final_offset_array(@final_d_key)
-    
-    @encryption = Encryption.new(@message, @today, @offset)
+    message = "Hello World!"
+    @encryption = Encryption.new(message, @today, @offset)
 
   end
 

@@ -15,7 +15,7 @@ class Encryption
           new_date = computer_date.timestamp[0].to_s
           @date = new_date
     else
-      @date
+      @date = today.date
     end
   end
 
