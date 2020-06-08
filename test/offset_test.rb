@@ -21,7 +21,6 @@ class OffsetTest < Minitest::Test
   end
 
   def test_it_has_attributes
-    assert_equal 2400, @offset.last_four
     assert_equal [60820], @offset.date_initiated
     assert_equal [], @offset.final_offset_array
     assert_equal 0, @offset.final_a_key
@@ -34,6 +33,7 @@ class OffsetTest < Minitest::Test
   def test_it_can_turn_last_four_into_elements_in_array
 
     assert_equal [2, 4, 0, 0], @offset.last_four_array
+    assert_equal 2400, @offset.get_last_four
 
   end
 
