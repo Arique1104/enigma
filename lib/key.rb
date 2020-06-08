@@ -2,6 +2,7 @@ class Key
  attr_reader :get_key
   def initialize
     @get_key = []
+    @get_five = self.generate_five_digit_key
   end
 
   def generate_five_digit_key
