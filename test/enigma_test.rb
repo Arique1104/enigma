@@ -37,4 +37,15 @@ class EngimaTest < Minitest::Test
 
   end
 
+  def test_it_can_encrypt_a_message
+    expected =  {
+      encryption: "keder ohulw",
+      key: "02715",
+      date: "040895"
+    }
+
+    assert_equal expected, @enigma.encrypt("Hello World!")
+
+  end
+
 end

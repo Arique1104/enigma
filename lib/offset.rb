@@ -4,11 +4,13 @@ attr_reader :key_feature,
 :final_a_key,
 :final_b_key,
 :final_c_key,
-:final_d_key
+:final_d_key,
+:final_offset_array
 
   def initialize(key_feature, offset_calculations)
     @key_feature = key_feature
     @calculations = offset_calculations
+    @final_offset_array = []
     @final_a_key = 0
     @final_b_key = 0
     @final_c_key = 0
@@ -31,8 +33,14 @@ attr_reader :key_feature,
     @final_b_key += b_key + last_four_array[1]
     @final_c_key += c_key + last_four_array[2]
     @final_d_key += d_key + last_four_array[3]
+
+
   end
 
+  def add_to_final_offset_array(final_key)
+    @final_offset_array << final_key
+
+  end
 
 
 
