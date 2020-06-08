@@ -18,7 +18,12 @@ class EncryptionTest < Minitest::Test
     @offset_calculations.get_last_four
     @offset = Offset.new(@key_feature, @offset_calculations)
     @offset.calculate_final_key_shift
-    @encryption = Encryption.new(@today, @offset)
+    @offset.add_to_final_offset_array(@final_a_key)
+    @offset.add_to_final_offset_array(@final_b_key)
+    @offset.add_to_final_offset_array(@final_c_key)
+    @offset.add_to_final_offset_array(@final_d_key)
+
+    @encryption = Encryption.new(@message, @today, @offset)
 
   end
 
@@ -28,10 +33,19 @@ class EncryptionTest < Minitest::Test
   end
 
   def test_it_has_attributes
-    assert_equal "60620", @encryption.string_date
+    assert_equal "60720", @encryption.string_date
     assert_equal "12345", @encryption.string_offset_key
     assert_equal @offset, @encryption.offset
     assert_equal @today.date_initiated, @encryption.date
+
+    expected = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
+    assert_equal expected, @encryption.alphabet
+  end
+
+  def test_it_can_encrypt_a_message
+
+    assert_equal "aesch cfklk!", @encryption.encrypt_message("Hello World!")
+
   end
 
 

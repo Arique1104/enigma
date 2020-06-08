@@ -19,11 +19,11 @@ class TodayDateTest < Minitest::Test
 
   def test_it_can_get_today_date
 
-    assert_equal 60620, @today.right_now
+    assert_equal 60720, @today.right_now
   end
 
   def test_it_can_store_the_date
-    assert_equal [60620], @today.timestamp
+    assert_equal [60720], @today.timestamp
   end
 
 end
