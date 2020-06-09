@@ -1,3 +1,4 @@
+require "date"
 class Offset
 attr_reader :key_feature,
 :calculations,
@@ -5,25 +6,48 @@ attr_reader :key_feature,
 :final_b_key,
 :final_c_key,
 :final_d_key,
-:final_offset_array
+:final_offset_array,
+:date,
+:last_four,
+:date_initiated
 
-  def initialize(key_feature, offset_calculations)
-    @key_feature = key_feature
-    @calculations = offset_calculations
-    @final_offset_array = []
-    @final_a_key = 0
-    @final_b_key = 0
-    @final_c_key = 0
-    @final_d_key = 0
-  end
+ def initialize
+   @date_initiated = []
+   @final_offset_array = []
+   @final_a_key = 0
+   @final_b_key = 0
+   @final_c_key = 0
+   @final_d_key = 0
+   @last_four_array
+ end
 
   def last_four_array
-    last_four = calculations.last_four
-    last_four_to_array = last_four.to_s.split(//).map{|num| num.to_i}
+    four_array = get_last_four
+    four_array.to_s.split(//).map{|num| num.to_i}
   end
+
+  def squared_date
+    date_integer = @date_initiated[0]
+    date_integer * date_integer
+  end
+
+  def get_last_four
+    squared_date % 10000
+  end
+
+
+
+ def get_date
+   now = Time.now
+   now_formatted = now.strftime("%m%d%y")
+   @date = now_formatted
+   @date_initiated << now_formatted.to_i
+
+ end
 
   def calculate_final_key_shift
     last_four_array
+    @key_feature = KeyFeature.new
     a_key = @key_feature.a_key.to_i
     b_key = @key_feature.b_key.to_i
     c_key = @key_feature.c_key.to_i
@@ -41,11 +65,5 @@ attr_reader :key_feature,
     @final_offset_array << final_key
 
   end
-
-
-
-
-
-
 
 end

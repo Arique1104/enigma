@@ -10,17 +10,21 @@ require "./lib/enigma"
 class EngimaTest < Minitest::Test
 
   def setup
-    @key = Key.new
-    @key.generate_five_digit_key
-    @key_feature = KeyFeature.new(@key)
-    @today = TodayDate.new
-    @today.right_now
-    @today.timestamp
-    @offset_calculations = OffsetCalculations.new(@today)
-    @offset_calculations.get_last_four
-    @offset = Offset.new(@key_feature, @offset_calculations)
+    @key_feature = KeyFeature.new
+    @key_feature
+    @key_feature.a_key.to_i
+    @key_feature.b_key.to_i
+    @key_feature.c_key.to_i
+    @key_feature.d_key.to_i
+    @offset = Offset.new
+    @offset.get_date
     @offset.calculate_final_key_shift
-    @encryption = Encryption.new(@today, @offset)
+    @offset.add_to_final_offset_array(@final_a_key)
+    @offset.add_to_final_offset_array(@final_b_key)
+    @offset.add_to_final_offset_array(@final_c_key)
+    @offset.add_to_final_offset_array(@final_d_key)
+    @message = "Hello World!"
+    @encryption = Encryption.new(@message, @key_feature, @offset)
     @enigma = Enigma.new
   end
 
