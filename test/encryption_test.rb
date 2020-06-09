@@ -1,14 +1,11 @@
 require "./test/test_helper"
-require "./lib/key"
 require "./lib/key_feature"
 require "./lib/today_date"
 require "./lib/offset_calculations"
 require "./lib/offset"
 require "./lib/encryption"
-require "./lib/enigma"
-
-class EngimaTest < Minitest::Test
-
+#
+class EncryptionTest < Minitest::Test
   def setup
     @key_feature = KeyFeature.new
     @key_feature
@@ -25,31 +22,31 @@ class EngimaTest < Minitest::Test
     @offset.add_to_final_offset_array(@final_d_key)
     @message = "Hello World!"
     @encryption = Encryption.new(@message, @key_feature, @offset)
-    @enigma = Enigma.new
+#
   end
-
+#
   def test_it_exists
-    assert_instance_of Enigma, @enigma
+
+    assert_instance_of Encryption, @encryption
   end
 
   def test_it_has_attributes
-    expected1 = {}
-    assert_equal expected1, @enigma.encrypted
+    @encryption.set_date
+    assert_equal "060820", @encryption.date
 
-    expected2 = {}
-    assert_equal expected2, @enigma.decrypted
+    assert_equal "12345", @encryption.key_string
+    assert_equal @offset, @encryption.offset
 
+    expected = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
+    assert_equal expected, @encryption.alphabet
   end
 
   def test_it_can_encrypt_a_message
-    expected =  {
-      encryption: "keder ohulw",
-      key: "02715",
-      date: "040895"
-    }
 
-    assert_equal expected, @enigma.encrypt("Hello World!")
+    assert_equal "vescb cfelk!", @encryption.encrypt_message(@message)
 
   end
+
+
 
 end
