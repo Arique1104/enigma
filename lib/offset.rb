@@ -11,7 +11,7 @@ attr_reader :key_feature,
 :last_four,
 :date_initiated
 
- def initialize
+ def initialize(date)
    @date_initiated = []
    @final_offset_array = []
    @final_a_key = 0
@@ -35,15 +35,13 @@ attr_reader :key_feature,
     squared_date % 10000
   end
 
+  def get_date
+     now = Time.now
+     now_formatted = now.strftime("%m%d%y")
+     @date = now_formatted
+     @date_initiated << now_formatted.to_i
 
-
- def get_date
-   now = Time.now
-   now_formatted = now.strftime("%m%d%y")
-   @date = now_formatted
-   @date_initiated << now_formatted.to_i
-
- end
+  end
 
   def calculate_final_key_shift
     last_four_array

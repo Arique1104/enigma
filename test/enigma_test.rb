@@ -32,16 +32,8 @@ class EngimaTest < Minitest::Test
     assert_instance_of Enigma, @enigma
   end
 
-  def test_it_has_attributes
-    expected1 = {}
-    assert_equal expected1, @enigma.encrypted
-
-    expected2 = {}
-    assert_equal expected2, @enigma.decrypted
-
-  end
-
   def test_it_can_encrypt_a_message
+    # skip
     expected =  {
       encryption: "keder ohulw",
       key: "02715",
